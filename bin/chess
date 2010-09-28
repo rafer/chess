@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby 
+$LOAD_PATH.push File.join(File.dirname(__FILE__),"..","lib") 
+
+require 'chess'
+include Chess
+
+def move_from(move_string)
+  origin = move_string.split.first
+  destination = move_string.split.last
+  move = Move.new(origin, destination)
+end
+
+game = Game.new(StartingPositions::Standard.new)
+
+puts game.board.to_s + "\n\n"
+
+while move = gets.strip
+  begin
+    move = move_from(move)
+    game.apply(move)
+
+    puts "\n" + game.board.to_s + "\n\n\n"
+    puts "#{game.whos_turn?}'s move\n\n"
+
+  rescue StandardError => e
+    puts "\nCaught #{e}\n\n"
+  end
+end

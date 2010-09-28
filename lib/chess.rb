@@ -1,0 +1,16 @@
+require 'chess/board'
+require 'chess/move'
+require 'chess/game'
+require 'chess/square'
+
+require 'chess/pieces/base'
+require 'chess/pieces/bishop'
+require 'chess/pieces/king'
+require 'chess/pieces/knight'
+require 'chess/pieces/pawn'
+require 'chess/pieces/queen'
+require 'chess/pieces/rook'
+
+require 'chess/starting_positions/standard'
+require 'chess/starting_positions/fischer_random'
+require 'chess/starting_positions/from_string'
